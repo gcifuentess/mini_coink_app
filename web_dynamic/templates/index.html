@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/footer.css') }}?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/registry.css') }}?{{ cache_id }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}?{{ cache_id }}">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/coink.js?{{ cache_id }}"></script>
+
+    <title>Coink &#8211; Ahorro con propósito</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div id="api_status"></div>
+    </header>
+    <div class="container">
+      <section class="registry">
+	<div class="users">
+	  <h3>Registro de Usuarios</h3>
+	</div>
+	<form class="forms">
+	  <label for="fname">Nombre Completo:</label><br>
+	  <input type="text" id="fname" name="fname"><br><br>
+	  <label for="email">Email:</label><br>
+	  <input type="text" id="email" name="email"><br><br>
+	  <label for="city">Ciudad:</label><br>
+	  <input type="text" id="city" name="city">
+	</form>
+	<button type="button">Registrar</button>
+      </section>
+    </div>
+    <footer>
+      <p>Coink - La alcancía que siempre te acompaña</p>
+    </footer>
+  </body>
+</html>

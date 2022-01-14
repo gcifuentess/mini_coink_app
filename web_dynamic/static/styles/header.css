@@ -1,0 +1,28 @@
+header {
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    background-color:  #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    background: url("../images/logo.svg") no-repeat;
+    height: 100%;
+    width: 50%;
+    margin-left: 20px;
+}
+
+#api_status {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: 30px;
+    border-radius: 50%;
+    background-color: #CCCCCC;
+}
+
+#api_status.available {
+    background-color: #77DD37;
+}
