@@ -1,13 +1,18 @@
 $(document).ready(function(){
 
-    // Check API status
-    $.getJSON('http://0.0.0.0:5001/api/v1/status', (data) => {
-	if (data.status === 'OK') {
-	    $('DIV#api_status').addClass('available');
-	} else {
-	    $('DIV#api_status').removeClass('available');
-	}
-    });
+    function checkAPI(){
+	// Check API status
+	$.getJSON('http://0.0.0.0:5001/api/v1/status', (data) => {
+	    if (data.status === 'OK') {
+		$('DIV#api_status').addClass('available');
+	    }
+	})
+	    .fail(function(){
+		$('DIV#api_status').removeClass('available');
+		$("#includedContent").empty();
+		$("#includedContent").append('<p>API desconectada</p>');
+	    })
+    };
 
     function convertFormToJSON(form) {
 	 // Encodes the set of form elements as an array of names and values:
@@ -19,8 +24,13 @@ $(document).ready(function(){
     	return JSON.stringify(json);
     };
 
+    checkAPI();
+
     // to register users:
     $('button#registry').click(function(){
+
+	checkAPI();
+
 	$('#includedContent').removeClass('show_error');
 	$('#includedContent').removeClass('show_ok');
 	$('#includedContent').addClass('dont_show');
