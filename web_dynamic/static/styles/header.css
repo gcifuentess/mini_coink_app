@@ -26,3 +26,46 @@ header .logo {
 #api_status.available {
     background-color: #77DD37;
 }
+
+header h2 {
+    margin-left: 15%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+header h3 {
+    color: #003336;
+    margin-left: 15%;
+    /*margin-bottom: 0;*/
+    font-weight: 600;
+}
+
+.links {
+    height: 95%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.link_registry {
+    height: 75%;
+    width: 100px;
+    border-right: 1px solid #DDDDDD;
+}
+.link_report {
+    height: 75%;
+    width: 100px;
+}
+
+.link_registry:hover {
+    background: #77DD37;
+}
+
+.link_report:hover {
+    background: #77DD37;
+}
+
+a {
+    text-decoration: none;
+}
