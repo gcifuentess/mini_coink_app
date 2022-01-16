@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/registry.css') }}?{{ cache_id }}">
     <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}?{{ cache_id }}">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="../static/scripts/coink.js?{{ cache_id }}"></script>
 
     <title>Coink &#8211; Ahorro con propósito</title>
@@ -23,15 +23,16 @@
 	<div class="users">
 	  <h3>Registro de Usuarios</h3>
 	</div>
-	<form class="forms">
+	<form id="form1" class="forms">
 	  <label for="fname">Nombre Completo:</label><br>
-	  <input type="text" id="fname" name="fname"><br><br>
+	  <input type="text" id="full_name" name="full_name"><br><br>
 	  <label for="email">Email:</label><br>
 	  <input type="text" id="email" name="email"><br><br>
 	  <label for="city">Ciudad:</label><br>
 	  <input type="text" id="city" name="city">
 	</form>
-	<button type="button">Registrar</button>
+	<div id="includedContent" class="dont_show">Hide Me</div>
+	<button id="registry" type="button">Registrar</button>
       </section>
     </div>
     <footer>

@@ -7,7 +7,7 @@ from flask import abort, jsonify, make_response, request
 import re
 
 
-email_patt = r'[\w\.]{5,30}\+?[\w]{0,10}@[\w\-]+\.[a-z]{2,5}\.?[a-z]{0,5}'
+email_patt = r'[\w\.]{2,30}\+?[\w]{0,10}@[\w\-]+\.[a-z]{2,5}\.?[a-z]{0,5}'
 email_patt = re.compile(email_patt)
 
 
@@ -64,9 +64,9 @@ def post_user():
 
     if 'email' not in data:
         abort(400, description="email faltante")
-    if 'full_name' not in data:
+    if 'full_name' not in data or data['full_name'] == '':
         abort(400, description="nombre completo faltante")
-    if 'city' not in data:
+    if 'city' not in data or data['city'] == '':
         abort(400, description="ciudad faltante")
 
     if re.match(email_patt, data['email']) == None:

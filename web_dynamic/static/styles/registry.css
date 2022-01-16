@@ -1,7 +1,7 @@
 .container .registry {
     position: absolute;
     background: white;
-    height: 400px;
+    height: 420px;
     width: 40%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
@@ -14,6 +14,7 @@
     left: 36%;
     top: 33%;
 }
+
 button {
     position: absolute;
     font-size: 18px;
@@ -44,9 +45,29 @@ button:hover {
 }
 .users {
     position: absolute;
-    height: 18%;
+    height: 15%;
     width: 40%;
     top: 5%;
     left: 30%;
     border-bottom: 2px solid #DDDDDD;
+}
+
+#includedContent {
+    position: absolute;
+    top: 70%;
+    width: 40%;
+    left: 30%;
+    text-align: center;
+}
+
+.dont_show{
+    color: #FFFFFF;
+}
+
+.show_ok{
+    color: green;
+
+}
+.show_error{
+    color: red;
 }
