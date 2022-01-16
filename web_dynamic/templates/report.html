@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/common.css') }}?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/footer.css') }}?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/report.css') }}?{{ cache_id }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}?{{ cache_id }}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/coink.js?{{ cache_id }}"></script>
+
+    <title>Coink &#8211; Ahorro con propósito</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <div class="links">
+	<div class="link_report">
+	  <a href="/report"><h3>Reporte</h3></a>
+	  <h4>&nbsp;</h4>
+	</div>
+	<div class="link_registry">
+	  <a href="/"><h3>Registro</h3></a>
+	  <h4>&nbsp;</h4>
+	</div>
+      </div>
+      <div id="api_status"></div>
+    </header>
+    <div class="container">
+      <section class="report">
+	<div class="users">
+	  <h3>Reporte de Usuarios Registrados</h3>
+	</div>
+	<table>
+	  <tr>
+	    <th>Nombre Completo</th>
+	    <th>Email</th>
+	    <th>Ciudad</th>
+	  </tr>
+	  {% for user in users %}
+	  <tr>
+	    <td>{{ user.full_name }}</td>
+	    <td>{{user.email }}</td>
+	    <td>{{ user.city }}</td>
+	  </tr>
+	  {% endfor %}
+	</table>
+      </section>
+    </div>
+    <footer>
+      <p>Coink - La alcancía que siempre te acompaña</p>
+    </footer>
+  </body>
+</html>

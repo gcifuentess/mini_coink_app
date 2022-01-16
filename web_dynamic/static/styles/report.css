@@ -1,0 +1,48 @@
+.container .report {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 1%;
+    padding-bottom: 80px;
+}
+
+.report h3 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+.users {
+    height: 50px;
+    width: 50%;
+    border-bottom: 2px solid #DDDDDD;
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;;
+}
+
+tr:hover {
+    background-color: #dddddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #77DD37;
+    color: #003336;
+}
