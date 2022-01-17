@@ -60,7 +60,7 @@ def post_user():
     """
     try:
         data = request.get_json()
-    except:
+    except Exception as e:
         abort(400, description="Not a JSON")
 
     if 'full_name' not in data or data['full_name'] == '':
@@ -69,18 +69,17 @@ def post_user():
         abort(400, description="el nombre no puede contener comas")
     if 'email' not in data:
         abort(400, description="email faltante")
-    if re.match(email_patt, data['email']) == None:
+    if re.match(email_patt, data['email']) is None:
         abort(400, description="formato email errado")
     if 'city' not in data or data['city'] == '':
         abort(400, description="ciudad faltante")
     if ',' in data['city']:
         abort(400, description="la ciudad no puede contener comas")
 
-
     user = User(**data)
     try:
         user.save()
-    except:
+    except Exception as e:
         abort(400, description="email ya registrado")
 
     log_str = "[NEW USER],{},{},{},{},{}\n".format(

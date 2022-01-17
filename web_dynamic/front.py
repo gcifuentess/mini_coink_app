@@ -13,6 +13,7 @@ def index():
     return render_template('index.html',
                            cache_id=uuid.uuid4())
 
+
 @app.route('/report', strict_slashes=False)
 def report():
     '''shows all the users registrated'''

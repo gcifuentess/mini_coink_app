@@ -12,6 +12,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 classes = {"User": User}
 
+
 class DBStorage:
     """interacts with the SQLite database"""
     __engine = None
